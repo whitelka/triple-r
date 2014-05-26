@@ -1,0 +1,149 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#title_image {
+  position: absolute;
+  padding-top: 50px;
+  left: 50%;
+  width: 356px;
+  margin-left: -178px;
+}
+
+div#main {
+  position: absolute;
+  padding-top: 180px;
+  left: 50%;
+  width: 680px;
+  margin-left: -340px;
+}
+
+.Arita {
+  font-family: 'AritadotumTTF-Bold';
+  letter-spacing: 60;
+  font-stretch: 98%;
+  color: #323232;
+}
+
+div#main_image {
+  position: absolute;
+}
+
+div#text_1 {
+  position: absolute;
+  padding-top: 112px;
+  margin-left: 343px;
+  //font size
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+}
+
+div#text_2 {
+  position: absolute;
+  padding-top: 270px;
+  margin-left: 218px;
+  //font size
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+}
+
+div#bottom_image {
+  position: absolute;
+  padding-top: 577px;
+  left: 50%;
+  width: 99px;
+  margin-left: -49.5px;
+}
+
+div#send {
+  position: absolute;
+  padding-top: 623px;
+  left: 50%;
+  width: 520px;
+  margin-left: -260px;
+}
+
+div#text_3 {
+  position: absolute;
+  //font size
+  font-size: 19px;
+  line-height: 22px;
+  padding-left: 80px;
+}
+
+div #send_box {
+  position: absolute;
+  padding-top: 62px;
+}
+
+div #text_box {
+  position: absolute;
+  position: relative;
+  border-color:#323232;
+  border-width:3px;
+  border-radius:10px;
+  height:43px;
+  width:418px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  font-size:18px;
+  z-index:100;
+}
+
+div #submit_button {
+  background-image: image-url("btn_send.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border-style:none;
+  height:45px;
+  width:90px;
+  cursor:hand;
+}
+
+div#put_facebook {
+  padding-top: 770px;
+  position: absolute;
+  left: 50%;
+  width: 700px;
+  margin-left: -350px;
+}
+
+footer {
+  position: absolute;
+  min-width: 900px;
+  background-image: image-url("bg_footer.png");
+  margin-top: 856px;
+  left: 50%;
+  width: 900px;
+  margin-left: -450px;
+  color: #ee7560;
+  font-family: "Lato";
+  font-size: 12px;
+  letter-spacing: -10;
+  font-stretch: 100%;
+
+  div#copyright {
+    float: left;
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+
+  ul {
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+}
+
+div #input_form {
+  position: absolute;
+}
+div #comments {
+  position: absolute;
+}
+
+input #comment_data {
+  width: 100px;
+}

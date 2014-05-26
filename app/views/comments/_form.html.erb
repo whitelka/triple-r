@@ -1,0 +1,7 @@
+
+<%= simple_form_for @comment do |f| %>
+    <%= f.label :data %><br>
+    <%= f.text_field :data %>
+    <%= f.input :location, collection: Comment::locations.sort.map { |k, _| [k.humanize, k] } %>
+    <%= f.button :submit, "등록" %>
+<% end %>
