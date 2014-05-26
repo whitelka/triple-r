@@ -5,9 +5,9 @@
 div#title_image {
   position: absolute;
   padding-top: 50px;
-  left: 50%;
+  left: 20%;
   width: 356px;
-  margin-left: -178px;
+  margin-left: 119px;
 }
 
 div#main {
@@ -51,10 +51,9 @@ div#text_2 {
 
 div#bottom_image {
   position: absolute;
-  padding-top: 577px;
-  left: 50%;
-  width: 99px;
-  margin-left: -49.5px;
+  padding-top: 610px;
+  left: 20%;
+  margin-left: 119px;
 }
 
 div#send {
@@ -93,7 +92,7 @@ div #text_box {
 }
 
 div #submit_button {
-  background-image: image-url("btn_send.png");
+  background-image: image-url("board_send_btn.png");
   background-repeat: no-repeat;
   background-color: transparent;
   border-style:none;
@@ -108,33 +107,6 @@ div#put_facebook {
   left: 50%;
   width: 700px;
   margin-left: -350px;
-}
-
-footer {
-  position: absolute;
-  min-width: 900px;
-  background-image: image-url("bg_footer.png");
-  margin-top: 856px;
-  left: 50%;
-  width: 900px;
-  margin-left: -450px;
-  color: #ee7560;
-  font-family: "Lato";
-  font-size: 12px;
-  letter-spacing: -10;
-  font-stretch: 100%;
-
-  div#copyright {
-    float: left;
-    margin-top: 10px;
-    margin-left: 50px;
-  }
-
-  ul {
-    float: right;
-    margin-right: 50px;
-    margin-top: 10px;
-  }
 }
 
 div #input_form {

@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 20140526022805) do
 
   create_table "comments", force: true do |t|
     t.string   "data"
-    t.integer  "location"
+    t.integer  "location",   default: 0
+    t.integer  "like",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
