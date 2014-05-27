@@ -10,25 +10,74 @@ div#title_image {
   margin-left: 119px;
 }
 
-div#main {
-  position: absolute;
-  padding-top: 180px;
-  left: 50%;
-  width: 680px;
-  margin-left: -340px;
-}
-
-.Arita {
-  font-family: 'AritadotumTTF-Bold';
-  letter-spacing: 60;
-  font-stretch: 98%;
-  color: #323232;
-}
-
 div#main_image {
   position: absolute;
+  left: 20%;
+  margin-left: 119px;
+}
+div#main_image_1 {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 160px;
+}
+div#main_image_2_1 {
+  position: absolute;
+  margin-left: 437px;
+  margin-top: 160px;
 }
 
+.part_1 {
+  font-family: 'NanumGothicBold';
+  letter-spacing: -40;
+  font-stretch: 96%;
+  font-size: 20px;
+  color:#646464;
+  line-height: 28px;
+}
+.part_2 {
+  font-family: 'Lato';
+  letter-spacing: -50;
+  font-stretch: 100%;
+  font-size: 23px;
+  color:#49c5cd;
+  line-height: 28px;
+
+}
+.part_2_kr {
+  font-family: 'NanumGothicBold';
+  letter-spacing: -40;
+  font-stretch: 96%;
+  font-size: 20px;
+  color:#49c5cd;
+  line-height: 28px;
+}
+div#main_text_1 {
+  position: absolute;
+  margin-left: 251px;
+  padding-top: 230px;
+  width: 500px;
+
+}
+div#main_text_2 {
+  position: absolute;
+  margin-left: 11px;
+  padding-top: 400px;
+  width: 500px;
+
+}
+
+div#main_text_2_1 {
+  position: absolute;
+  margin-left: 0px;
+  padding-top: 260px;
+  width: 400px;
+}
+
+div#main_image_2 {
+  position: absolute;
+  padding-top: 355px;
+  margin-left: 441px;
+}
 div#text_1 {
   position: absolute;
   padding-top: 112px;
