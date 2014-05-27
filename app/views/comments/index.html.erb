@@ -1,34 +1,98 @@
 <div id="title_image"><%= image_tag "title.png" %></div>
   <div id="main_image">
-    <%= render 'comments/main_2' %>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
+      <div class="carousel-inner">
+        <div class="active item">
+          <%= render 'comments/main_1' %>
+        </div>
+        <div class="item">
+          <%= render 'comments/main_2' %>
+        </div>
+      </div>
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
   </div>
 
-<div id="bottom_image"><%= image_tag "board_close_bg.png" %></div>
+<div id="bottom_image">
+  <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment"
+        method="post">
+    <div style="display:none">
+      <input name="utf8" type="hidden" value="&#x2713;" />
+      <input name="authenticity_token" type="hidden" value=<%= form_authenticity_token %>/>
 
-<div id="send"><%= render 'form' %>
-  <a href="#" onclick="show_div('comments'); return false;">댓글 보기</a>
+    </div>
+    <input id="comment_data" name="comment[data]" type="text"/>
+      <select id="comment_location" name="comment[location]"><option value="">지역을 선택해 주세요</option>
+      <option value="강원도">강원도</option>
+      <option value="대구/경상북도">대구/경상북도</option>
+      <option value="대전/충청남도">대전/충청남도</option>
+      <option value="부산/경상남도">부산/경상남도</option>
+      <option value="서울">서울</option>
+      <option value="인천/경기">인천/경기</option>
+      <option value="제주도">제주도</option>
+      <option value="충청북도">충청북도</option></select>
+    <input id="submit_button" name="commit" type="submit" value=""/>
+    </form>
 
-<div id="comments" >
-  <table>
-    <% @comments.each do |comment| %>
-        <tr>
-          <td><%= comment.data %></td>
-          <td><%= comment.location %></td>
-          <td><%= link_to '공감하기', comment_path(id:comment.id, page:params[:page]), method: :put %></td>
-        </tr>
-    <% end %>
-  </table>
-  <center><%= paginate @comments %></center>
+    <div id="comments" style="display:none;">
+      <% @comments.each.with_index do |comment, index| %>
+         <input id="comment" value="<%=comment.data%>"/>
+         <div id="under_comment">
+           <div id="location"><%= comment.location %></div>
+           <div id="do_like">
+             <%= link_to '공감하기', comment_path(id:comment.id, page:params[:page]), method: :put %>
+           </div>
+           <div id="like">
+             <%= comment.like %>
+           </div>
+           <% if index == @comments.count - 1 %>
+             <div id="last_line">
+               <div class="flickr_pagination">
+               <center><%= paginate @comments %></center>
+               </div>
+             </div>
+               <div id="opinion_image_off">
+                 <a href="#" onclick="show_div(true); return false;"><%= image_tag "opinion_close.png"%></a>
+                 <div id="footer">
+                   <div id="copyright">Copyright(c)2014.05 All rights Reserved.</div><ul>CONTACT</ul>
+                 </div>
+               </div>
+           <% else %>
+             <div id="dot_line">
+             </div>
+           <% end %>
+         </div>
+      <% end %>
+    </div>
+
+    <div id="opinion_image_on" >
+      <a href="#" onclick="show_div(false); return false;"><%= image_tag "opinion_more.png"%></a>
+      <div id="footer">
+        <div id="copyright">Copyright(c)2014.05 All rights Reserved.</div><ul>CONTACT</ul>
+      </div>
+    </div>
 </div>
-</div>
-
 
 <script type="text/javascript">
-    function show_div(comments){
-        var objDiv = document.getElementById(comments);
+    function show_div(flag){
 
-        if(objDiv.style.display=="block"){ objDiv.style.display = "none"; }
-        else{ objDiv.style.display = "block"; }
+        var objDiv = document.getElementById("comments");
+        var objBtnOn = document.getElementById("opinion_image_on");
+
+        if (flag) {
+            objDiv.style.display = "none";
+            objBtnOn.style.display = "block";
+        }
+        else{
+            objDiv.style.display = "block";
+            objBtnOn.style.display = "none";
+        }
     }
+</script>
+<script>
+    $(function(){
+        $('#myCarousel').carousel();
+    });
 </script>
