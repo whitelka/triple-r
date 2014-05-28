@@ -1,19 +1,21 @@
 <div id="title_image"><%= image_tag "title.png" %></div>
-  <div id="main_image">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-      <div class="carousel-inner">
-        <div class="active item">
-          <%= render 'comments/main_1' %>
-        </div>
-        <div class="item">
-          <%= render 'comments/main_2' %>
-        </div>
+<% content_for :head do %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                interval: 2000
+            });
+        });
+    </script>
+<% end %>
+<div id="main_image">
+      <div class="main_1">
+        <%= render 'comments/main_1' %>
       </div>
-      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      <div class="main_2" style="display:none">
+        <%= render 'comments/main_2' %>
+      </div>
     </div>
-  </div>
 
 <div id="bottom_image">
   <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment"
@@ -67,8 +69,13 @@
       <% end %>
     </div>
 
+
     <div id="opinion_image_on" >
-      <a href="#" onclick="show_div(false); return false;"><%= image_tag "opinion_more.png"%></a>
+      <% if @comments.present? %>
+        <a href="#" onclick="show_div(false); return false;"><%= image_tag "opinion_more.png"%></a>
+      <% else %>
+        <a href="#"><%= image_tag "opinion_more.png"%></a>
+      <% end %>
       <div id="footer">
         <div id="copyright">Copyright(c)2014.05 All rights Reserved.</div><ul>CONTACT</ul>
       </div>
@@ -92,7 +99,14 @@
     }
 </script>
 <script>
-    $(function(){
-        $('#myCarousel').carousel();
+  function fade($ele) {
+    $ele.fadeIn(1000).delay(2000).fadeOut(1000, function() {
+      var $next = $(this).next('div');
+      // if there is a following `p` element, it is faded in
+      // otherwise start from the beginning by taking
+      // the parent's first child
+      fade($next.length > 0 ? $next : $(this).parent().children().first());
     });
+  };
+  fade($('#main_image > div').first());
 </script>

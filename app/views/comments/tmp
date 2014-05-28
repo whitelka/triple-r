@@ -30,6 +30,30 @@
 
 
 
+% content_for :head do %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#myCarousel').carousel({
+                interval: 2000
+            });
+        });
+    </script>
+<% end %>
+<div id="main_image">
+  <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item">
+        <%= render 'comments/main_1' %>
+      </div>
+      <div class="item">
+        <%= render 'comments/main_2' %>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+  </div>
+</div>
 
 
 
