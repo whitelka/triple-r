@@ -1,3 +1,4 @@
+
 <div id="title_image"><%= image_tag "title.png" %></div>
 <div id="main_image">
       <div class="main_1">
@@ -60,8 +61,7 @@
          </div>
       <% end %>
     </div>
-
-  <div id="opinion_image_on">
+      <div id="opinion_image_on">
       <% if @comments.present? %>
         <a href="#" onclick="show_div(true); return false;"><%= image_tag "opinion_more.png"%></a>
       <% else %>
@@ -82,13 +82,20 @@
         if (flag) {
             objDiv.style.display = "block";
             objBtnOn.style.display = "none";
+            $.cookie("comments", "block");
+            $.cookie("opinion_image_on", "none");
         }
-        else{
+        else {
             objDiv.style.display = "none";
             objBtnOn.style.display = "block";
+            $.cookie("comments", "none");
+            $.cookie("opinion_image_on", "block");
 
         }
+        alert($.cookie("comments"));
+
     }
+
 </script>
 <script>
   function fade($ele) {

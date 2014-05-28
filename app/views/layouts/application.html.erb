@@ -6,6 +6,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
+  <script>
+      $(document).ready(function(){
+          var objDiv = document.getElementById("comments");
+          var objBtnOn = document.getElementById("opinion_image_on");
+
+          if ($.cookie("comments")){
+              objDiv.style.display = $.cookie("comments");
+          }
+          if ($.cookie("opinion_image_on")){
+              objBtnOn.style.display = $.cookie("opinion_image_on");
+          }
+      });
+      </script>
 </head>
 <body>
 <%= yield %>

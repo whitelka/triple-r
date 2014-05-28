@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
   def index
     @comments = Comment.all.page(params[:page]).order('created_at DESC').per(5)
     @comment = Comment.new
