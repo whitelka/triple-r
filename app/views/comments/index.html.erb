@@ -16,7 +16,7 @@
       <input name="authenticity_token" type="hidden" value=<%= form_authenticity_token %>/>
 
     </div>
-    <input id="comment_data" name="comment[data]" type="text"/>
+    <input id="comment_data" name="comment[data]" type="text" maxlength='40' />
       <select id="comment_location" name="comment[location]"><option value="">지역을 선택해 주세요</option>
       <option value="강원도">강원도</option>
       <option value="대구/경상북도">대구/경상북도</option>
@@ -38,10 +38,8 @@
           <div id="under_comment">
            <div id="location"><%= comment.location %></div>
            <div id="do_like">
-             <%= link_to '공감하기', comment_path(id:comment.id, page:params[:page]), method: :put %>
-           </div>
-           <div id="like">
-             <%= comment.like %>
+             <%= button_to "#{comment.like}", like_comments_path(id:comment.id, page:params[:page]),
+                           class: "btn_like"%>
            </div>
            <% if index == @comments.count - 1 %>
              <div id="last_line">

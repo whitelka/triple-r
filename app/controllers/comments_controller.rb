@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy, :like]
 
   def index
     @comments = Comment.all.page(params[:page]).order('created_at DESC').per(5)
@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
     @comments = Comment.all.page(params[:page]).order('created_at DESC').per(5)
     redirect_to root_path(page: params[:page])
   end
+
   def create
     @comment = Comment.new(comment_params)
     @comments = Comment.all
@@ -28,6 +29,14 @@ class CommentsController < ApplicationController
     #   format.html { redirect_to comments_url }
     #   format.json { head :no_content }
     # end
+  end
+
+  def like
+    @comment = Comment.find(params[:id])
+    @comment.like += 1
+    @comment.save
+    @comments = Comment.all.page(params[:page]).order('created_at DESC').per(5)
+    redirect_to root_path(page: params[:page])
   end
 
   private
