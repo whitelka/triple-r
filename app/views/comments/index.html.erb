@@ -29,7 +29,7 @@
     <input id="submit_button" name="commit" type="submit" value=""/>
     </form>
 
-    <div id="comments" style="display:none;">
+      <div id="comments" style="display:none;">
       <% @comments.each.with_index do |comment, index| %>
           <div id="comment_list_box">
           <input id="comment" value="<%=comment.data%>"/>
@@ -48,7 +48,7 @@
                </div>
              </div>
                <div id="opinion_image_off">
-                 <a href="#" onclick="show_div(true); return false;"><%= image_tag "opinion_close.png"%></a>
+                 <a href="#" onclick="show_div(false); return false;"><%= image_tag "opinion_close.png"%></a>
                  <div id="footer">
                    <div id="copyright">Copyright(c)2014.05 All rights Reserved.</div><ul>CONTACT</ul>
                  </div>
@@ -61,10 +61,9 @@
       <% end %>
     </div>
 
-
-    <div id="opinion_image_on" >
+  <div id="opinion_image_on">
       <% if @comments.present? %>
-        <a href="#" onclick="show_div(false); return false;"><%= image_tag "opinion_more.png"%></a>
+        <a href="#" onclick="show_div(true); return false;"><%= image_tag "opinion_more.png"%></a>
       <% else %>
         <a href="#"><%= image_tag "opinion_more.png"%></a>
       <% end %>
@@ -81,12 +80,13 @@
         var objBtnOn = document.getElementById("opinion_image_on");
 
         if (flag) {
-            objDiv.style.display = "none";
-            objBtnOn.style.display = "block";
-        }
-        else{
             objDiv.style.display = "block";
             objBtnOn.style.display = "none";
+        }
+        else{
+            objDiv.style.display = "none";
+            objBtnOn.style.display = "block";
+
         }
     }
 </script>
