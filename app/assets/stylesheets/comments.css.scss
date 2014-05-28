@@ -134,20 +134,28 @@ div#bottom_image {
     position: absolute;
     margin-top: 175px;
     margin-left: 32px;
-    #comment {
+    #comment_list_box {
       position: relative;
-      margin-top: 20px;
-      width:600px;
-      height:40px;
-      border-color:#49c5cd;
-      border-width:3px;
-      border-radius:10px;
-      background-color: #ffffff;
-      font-size:14px;
-      letter-spacing: -35;
-      font-stretch: 96%;
-      font-family: 'NanumGothicBold';
-      color:646464;
+
+      border: 3px;
+      border-color: #49c5cd;
+      width: 700px;
+
+      #comment {
+        position: relative;
+        margin-top: 15px;
+        width: 600px;
+        height: 40px;
+        border-color: #49c5cd;
+        border-width: 3px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        font-size: 14px;
+        letter-spacing: -35;
+        font-stretch: 96%;
+        font-family: 'NanumGothicBold';
+        color: 646464;
+      }
     }
     #under_comment {
       position: relative;
@@ -163,7 +171,7 @@ div#bottom_image {
       #do_like {
         position: absolute;
         color: #ffffff;
-        margin-top: 5px;
+        margin-top: 3px;
         margin-left: 538px;
         background-color: #49c5cd;
         font-family: 'NanumGothicBold';
@@ -171,7 +179,7 @@ div#bottom_image {
       }
       #like {
         position: relative;
-        margin-top: 5px;
+        margin-top: 3px;
         margin-left: 598px;
         color: #49c5cd;
         font-family: 'NanumGothicBold';
@@ -179,11 +187,11 @@ div#bottom_image {
       }
       #dot_line {
         position: relative;
-        margin-top: 20px;
+        margin-top: -85px;
         margin-left: -32px;
-        width: 662px;
-        height: 6px;
-        background-image: image-url("board_dash.png");
+        width: 664px;
+        height: 92px;
+        background-image: image-url("board_dash_high.png");
         background-repeat: no-repeat;
         background-color: transparent;
         border-style:none;

@@ -2,14 +2,14 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @comments = Comment.all.page(params[:page]).order('created_at DESC').per(2)
+    @comments = Comment.all.page(params[:page]).order('created_at DESC').per(5)
     @comment = Comment.new
   end
 
   def update
     @comment.like += 1
     @comment.save
-    @comments = Comment.all.page(params[:page]).order('created_at DESC').per(2)
+    @comments = Comment.all.page(params[:page]).order('created_at DESC').per(5)
     redirect_to root_path(page: params[:page])
   end
   def create

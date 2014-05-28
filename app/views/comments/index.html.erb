@@ -1,13 +1,4 @@
 <div id="title_image"><%= image_tag "title.png" %></div>
-<% content_for :head do %>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#myCarousel').carousel({
-                interval: 2000
-            });
-        });
-    </script>
-<% end %>
 <div id="main_image">
       <div class="main_1">
         <%= render 'comments/main_1' %>
@@ -40,8 +31,11 @@
 
     <div id="comments" style="display:none;">
       <% @comments.each.with_index do |comment, index| %>
-         <input id="comment" value="<%=comment.data%>"/>
-         <div id="under_comment">
+          <div id="comment_list_box">
+          <input id="comment" value="<%=comment.data%>"/>
+          </div>
+
+          <div id="under_comment">
            <div id="location"><%= comment.location %></div>
            <div id="do_like">
              <%= link_to '공감하기', comment_path(id:comment.id, page:params[:page]), method: :put %>
